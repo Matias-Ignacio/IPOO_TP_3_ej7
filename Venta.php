@@ -2,15 +2,15 @@
 
 class Venta{
     private $fecha;
-    private $colProductos;
+    private $colProductos; //Arreglo asosiativo ["cant" => 0, "id" => 0]
     private $cliente;
     private $importeFinal;
 
-    public function __construct($fecha, $colProductos, $cliente, $importeFinal){
+    public function __construct($fecha, $colProductos, $cliente){
         $this->fecha = $fecha;
         $this->colProductos = $colProductos;
         $this->cliente = $cliente;
-        $this->$importeFinal = $importeFinal;
+        $this->importeFinal = 0;
     }
 
     public function getFecha(){
@@ -50,5 +50,15 @@ class Venta{
         $cadena = "";
         return $cadena;
     }
+
+    /**
+     * Retorna el valor total de la venta
+     * @return int
+     */
+    public function darImporteVenta(){
+        return $this->getImporteFinal();
+    }
+
+
 
 }

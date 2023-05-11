@@ -12,6 +12,11 @@ class ProductoReg extends Producto{
     public function getDescuento(){
         return $this->descuento;
     }
+
+    public function __toString(){
+        $cadena = "";
+        return $cadena;
+    }
     /**
      * Retorna el precio de venta, (Compra * Ganacia) + (compra * Iva)
      * @return int
